@@ -10,9 +10,11 @@
 		 <?php include("enTete.php"); ?>
 	</header>
 	<section>
-		<h1>C'est quoi un grandeur nature?</h1>
-		Le jeu de rôle grandeur nature ou simplement grandeur nature (abrégé GN) est une forme de jeu de rôle dans laquelle les joueurs incarnent physiquement un personnage dans un univers fictif. 
-		Les joueurs interprètent leur personnage par des interactions et des actions physiques, d'après des règles de jeu et l'arbitrage d'organisateurs.
+	    <div class="descGN">
+		    <h1>C'est quoi un grandeur nature?</h1>
+		    <p>Le jeu de rôle grandeur nature ou simplement grandeur nature (abrégé GN) est une forme de jeu de rôle dans laquelle les joueurs incarnent physiquement un personnage dans un univers fictif.</p> 
+		    <p>Les joueurs interprètent leur personnage par des interactions et des actions physiques, d'après des règles de jeu et l'arbitrage d'organisateurs.</p>
+	    </div>
 	</section>
 	</body>
 </HTML>
