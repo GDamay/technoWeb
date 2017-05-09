@@ -9,8 +9,8 @@
 		<table>
 		<tr>
 			<td><a href="accueil.html">Accueil</a><td>
-			<td><a href="accueil.html">Evenements</a><td>
-			<td><a href="accueil.html">Inscription</a><td>
+			<td><a href="evenements.php">Evenements</a><td>
+			<td><a href="inscription.php">Inscription</a><td>
 			<td><a href="contact.html">Contact</a><td>
 		</tr>
 		</table>
@@ -21,19 +21,19 @@
 	</section>
 	<section>
 	<h1>Laisser un message</h1>
-		<form metdod = POST >
+		<form method = POST >
 		<table>
 		<tr>
 			<td><label for="nom">nom</label></td>
-			<td><textarea rows = "1" cols = "40" id="nom"></textarea></td>
+			<td><input type="text" name="nom" placeholder="Votre Nom" /></td>
 		</tr>
 		<tr>
 			<td><label for="mail">mail</label></td>
-			<td><textarea rows = "1" cols = "40" id = "mail"></textarea></td>
+			<td><input type = "text" name="mail" placeholder="Votre adresse e-mail" /></td>
 		</tr>
 		<tr>
 			<td><label for="mssg">message</label></td>
-			<td><textarea rows = "10" cols = "40" id="mssg"></textarea></td>
+			<td><textarea rows = "10" cols = "40" id="mssg" placeholder="Tapez votre message ici"></textarea></td>
 		</tr>
 		</table>
 		<input type="submit" name="envoyer" value="envoyer"/>
