@@ -1,6 +1,7 @@
 <!--DOCTYPE HTML-->
 <HTML>
-	<head>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>Évènements</title>
 	<meta charset="UTF-8"/>
 </head>

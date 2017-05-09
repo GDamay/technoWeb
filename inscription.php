@@ -50,7 +50,8 @@
 	                            <input type="checkbox" name="admin" id="admin" value="vrai" /><label for="admin">Je suis un administrateur</label><br />
 	                        </tr></td>
 	                        <tr><td>
-	                            <label for="mdpA">Mot de passe Administrateur : </label><input type="password" name="mdpAdmin" id="mdpA" />
+	                            <label for="mdpA">Mot de passe Administrateur :</label><br />
+	                            <input type="password" name="mdpAdmin" id="mdpA" placeholder="Mot de passe pour être administrateur" />
 	                        </tr></td>
 	                        <tr><td>
 	                            <input type="submit" value="S'inscrire" />
