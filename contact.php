@@ -6,14 +6,7 @@
 </head>
 <body>
 	<header>
-		<table>
-		<tr>
-			<td><a href="accueil.html">Accueil</a><td>
-			<td><a href="evenements.php">Evenements</a><td>
-			<td><a href="inscription.php">Inscription</a><td>
-			<td><a href="contact.html">Contact</a><td>
-		</tr>
-		</table>
+		<?php include("enTete.php"); ?>
 	</header>
 	<section>
 	<h1>Nos coordonnées</h1>
