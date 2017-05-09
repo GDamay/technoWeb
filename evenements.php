@@ -33,7 +33,7 @@ echo "string";
 	    		$c = fgetc ( $fichier );
 					while ($c=!"|")
 					{
-						//echo "$c 1";
+						echo $c;
 		    		$c = fgetc ( $fichier );
 					}
 					echo " <\h1>";
@@ -43,7 +43,7 @@ echo "string";
 	    		$c = fgetc ( $fichier );
 					while ($c=!"|")
 					{
-						//echo "$c";
+						echo $c;
 		    		$c = fgetc ( $fichier );
 					}
 					echo "<\p>";
@@ -53,7 +53,7 @@ echo "string";
 	    		$c = fgetc ( $fichier );
 					while ($c=!"|")
 					{
-						//echo "$c";
+						echo $c;
 		    		$c = fgetc ( $fichier );
 					}
 					echo "<\p>";
@@ -63,7 +63,7 @@ echo "string";
 	    		$c = fgetc ( $fichier );
 					while ($c=!"|")
 					{
-						//echo "$c";
+						echo $c;
 		    		$c = fgetc ( $fichier );
 					}
 					echo "<\p>";
