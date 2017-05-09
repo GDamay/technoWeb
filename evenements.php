@@ -5,74 +5,31 @@
 	<meta charset="UTF-8"/>
 </head>
   <body>
-  	<header>
-  		<table>
-  		<tr>
-  			<td><a href="accueil.html">Accueil</a><td>
-  			<td><a href="evenements.php">Evenements</a><td>
-  			<td><a href="inscrition.php">Inscription</a><td>
-  			<td><a href="contact.php">Contact</a><td>
-  		</tr>
-  		</table>
-  	</header>
-    <section>
+		<header>
+			<?php include("enTete.php"); ?>
+		</header>
 
-      <?php
-    	$fichier = fopen ("evenementsEnre", "r");
-    	fputs ( $fichier , "Une phrase\n");
-    	/* sous Windows \r\n, sous Linux ou mac \n*/
-/*   	echo "<p> Dans le fichier fichier . txt :</p>"; */
-echo "string";
-    	while (! feof ( $fichier ))
-			{
-      $c = fgetc ( $fichier );
-        while ($c != "\n")
+
+
+	    <?php
+	    	$fichier = fopen ("evenementsEnre", "r");
+	    	//fputs ( $fichier , "Une phrase\n");
+	    	/* sous Windows \r\n, sous Linux ou mac \n*/
+	/*   	echo "<p> Dans le fichier fichier . txt :</p>"; */
+
+	    	while (! feof ( $fichier ))
 				{
-					/* Lecture du titre du GN*/
-					echo "<h1>";
-	    		$c = fgetc ( $fichier );
-					while ($c=!"|")
-					{
-						echo $c;
-		    		$c = fgetc ( $fichier );
-					}
-					echo " <\h1>";
-					/*Lecture du lieu */
-	    		$c = fgetc ( $fichier );
-					echo "<p> <strong> Lieu: <\strong> ";
-	    		$c = fgetc ( $fichier );
-					while ($c=!"|")
-					{
-						echo $c;
-		    		$c = fgetc ( $fichier );
-					}
-					echo "<\p>";
-					/*Lecture de la date */
-	    		$c = fgetc ( $fichier );
-					echo "<p> <strong> Date: <\strong> ";
-	    		$c = fgetc ( $fichier );
-					while ($c=!"|")
-					{
-						echo $c;
-		    		$c = fgetc ( $fichier );
-					}
-					echo "<\p>";
-					/*Lecture de la description */
-	    		$c = fgetc ( $fichier );
-					echo "<p> <strong> Description: <\strong> ";
-	    		$c = fgetc ( $fichier );
-					while ($c=!"|")
-					{
-						echo $c;
-		    		$c = fgetc ( $fichier );
-					}
-					echo "<\p>";
-				}
-      }
-    fclose ( $fichier );
-    ?>
+						$event=fgets($fichier);
+						list($titre, $lieu, $date,$description)=explode("|",$event);
+						echo "<section> <h1> $titre </h1>";
+						echo "<strong> Lieu: </strong> $lieu <br>";
+						echo "<strong> Date: </strong> $date <br>";
+						echo "<strong> Descrition: </strong> $description";
+						echo "</section>";
+	      }
+	    fclose ( $fichier );
+	    ?>
 
-    <\section>
 
   </body>
 </HTML>
