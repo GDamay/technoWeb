@@ -9,11 +9,11 @@
 	<header>
 		<?php include("enTete.php"); ?>
 	</header>
-	<table>
+	<table class="fullPage">
 	    <tr>
-	        <td>
+	        <td id="colInscription">
 	            <section>
-	                <table>
+	                <table id="tableInscription">
 	                    <form method="post" action="traitementInscription.php">
 	                        <tr><td>
 	                            <h1>Inscription</h1>
@@ -59,9 +59,9 @@
 	                    </form>
 	                </table>
 	            </section>
-	        </td><td>
+	        </td><td id="colConnexion">
 	            <section>
-	                <table>
+	                <table id="tableConnexion">
 	                    <form method="post" action="traitementConnexion.php">
                             <tr><td>
                                 <h1>Connexion</h1>

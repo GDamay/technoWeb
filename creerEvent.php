@@ -2,7 +2,7 @@
 <HTML>
 <head>
 	<meta charset="UTF-8"/>
-        <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
 	<title>Création d'un événement</title>
 	
 </head>
@@ -48,4 +48,3 @@
 
 
 </body>
-evenementsEnre
