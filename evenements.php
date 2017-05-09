@@ -31,6 +31,10 @@
 	    fclose ( $fichier );
 	    ?>
 
+			<br>
+			<br>
+
+			<input type="button" name="creerEvent" value="Ajouter un évènement" onclick="self.location.href='creerEvent.php'" font-weight:bold"onclick>
 
   </body>
 </HTML>
