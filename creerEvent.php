@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="main.css" />
 	<title>Création d'un événement</title>
-	
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
 
@@ -33,7 +33,11 @@ if (ISSET($_POST['envoyer']))
 ?>
 
 	<header>
-
+	    <?php include("enTete.php"); ?>
+	</header>
+	
+    <section>
+        <h1>Création d'un événement</h1> 
 		<form method="post"> 
 
 			<table>
@@ -69,16 +73,11 @@ if (ISSET($_POST['envoyer']))
 			</table>
 			<input type="submit" name="envoyer" value="envoyer"/>
 		</form>
-
-	</header>
-	<h1>Création d'un événement</h1> 
+    </section>
+    
 	<section>
 
 	<?php $nomEvent = ''; require 'formulaireEvent.inc.php'; ?> 
-
-
-
-
 
 	</section>
 

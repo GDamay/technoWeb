@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>Évènements</title>
 	<meta charset="UTF-8"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
   <body>
 		<header>
@@ -25,7 +26,7 @@
 						echo "<section> <h1> $titre </h1>";
 						echo "<strong> Lieu: </strong> $lieu <br>";
 						echo "<strong> Date: </strong> $date <br>";
-						echo "<strong> Descrition: </strong> $description";
+						echo "<strong> Description: </strong> $description";
 						echo "</section>";
 						$event=fgets($fichier);
 	      }
@@ -34,8 +35,10 @@
 
 			<br>
 			<br>
-
-			<input type="button" name="creerEvent" value="Ajouter un évènement" onclick="self.location.href='creerEvent.php'" font-weight:bold"onclick>
+            
+            <section>
+			    <input type="button" name="creerEvent" value="Ajouter un évènement" onclick="self.location.href='creerEvent.php'" font-weight:bold"onclick>
+			</section>
 
   </body>
 </HTML>
