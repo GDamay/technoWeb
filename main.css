@@ -6,6 +6,11 @@ body
     background-color: AliceBlue;
 }
 
+section
+{
+	margin-left: 1%;
+}
+
 header
 {
     width: 100%;

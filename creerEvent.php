@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="main.css" />
 	<title>Création d'un événement</title>
-	
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
 
@@ -35,10 +35,16 @@
 	?>
 
 	<header>
+	   <?php include("enTete.php"); ?>
 		<h1>Création d'un événement</h1> 
 	</header>
 
 	<section>
+
+	</header>
+	
+    <section>
+        <h1>Création d'un événement</h1> 
 		<form method="post"> 
 			<table>
 				<tr>
