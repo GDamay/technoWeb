@@ -111,13 +111,8 @@
 	<header>
 	   <?php include("enTete.php"); ?>
 	</header>
-
-	<section>
-
-	</header>
-		<h1>Création d'un événement</h1> 
     <section>
-        
+        <h1>Création d'un événement</h1> 
 		<form method="post" action = "<?php echo($_SERVER['PHP_SELF']); ?>"> 
 			<table>
 				<tr>
