@@ -57,6 +57,9 @@
 	                        <tr><td>
 	                            <input type="submit" value="S'inscrire" />
 	                        </tr></td>
+	                        <tr><td>
+	                            (*Les champs marqués d'un astérisque sont obligatoires)
+	                        </tr></td>
 	                    </form>
 	                </table>
 	            </section>
@@ -81,6 +84,9 @@
                             <tr><td>
                                 <input type="submit" value="Se connecter" />
                             </tr></td>
+                            <tr><td>
+	                            (*Les champs marqués d'un astérisque sont obligatoires)
+	                        </tr></td>
                         </form>
                     </table>
 	            </section>
