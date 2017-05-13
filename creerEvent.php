@@ -113,29 +113,34 @@
 				<tr>
 					<td> 
 						<label for="nomE">Nom de l'événement*: </label> <br/>
-						<input type="text" name = "nomEvent" placeholder = "nom de l'événement" value = '<?php echo $nomEvent; ?>' id="nomE"> 
+						<input type="text" name = "nomEvent" placeholder = "nom de l'événement" <?php if(isset($nomEvent)){echo 'value = "$nomEvent"';} ?> id="nomE"> 
 						<?php echo "<font color='#FF0000'>$erreurNom</font>";?> 
 					</td> 
 				</tr>
 				<tr>
 					<td> <label for="lieuE">Lieu*: </label> <br/>
-					<input type="text" name = "lieuEvent" placeholder = "lieu de l'événement" value = '<?php echo $lieuEvent; ?>' id="lieuE" required>
+					<input type="text" name = "lieuEvent" placeholder = "lieu de l'événement" <?php if(isset($lieuEvent)){echo 'value = "$lieuEvent"';} ?> id="lieuE" required>
 						<?php echo "<font color='#FF0000'>$erreurLieu</font>";?>
 					</td>
 				</tr>
 				<tr>
 					<td> 
 						<label for="dateE">Date*: </label> <br/>
-						<input type="number" name = "jourEvent" min = 1 max = 31 placeholder = 31 value = '<?php echo $jourEvent; ?>' id="dateE" required>
-						<input type="number" name = "moisEvent" min = 1 max = 12 placeholder = 12 value = '<?php echo $moisEvent; ?>' id="dateE" required>
-						<input type="number" name = "anneeEvent" min = 2000 max = 2100 placeholder = 2017 value = '<?php echo $anneeEvent; ?>' id="dateE" required>
+						<input type="number" name = "jourEvent" min = 1 max = 31 placeholder = 31 <?php if(isset($jourEvent)){echo 'value = "$jourEvent"';} ?> id="dateE" required>
+						<input type="number" name = "moisEvent" min = 1 max = 12 placeholder = 12 <?php if(isset($moisEvent)){echo 'value = "$moisEvent"';} ?> id="dateE" required>
+						<input type="number" name = "anneeEvent" min = 2000 max = 2100 placeholder = 2017 <?php if(isset($anneeEvent)){echo 'value = "$anneeEvent"';} ?> id="dateE" required>
 						<?php echo "<font color='#FF0000'>$erreurDate</font>";?>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label for="descr">description de l'événement*:</label> <br/>
-						<textarea name = "descriptionEvent" rows = "10" cols = "40" id = "descr"></textarea>
+						<label for="descr">Description de l'événement*:</label> <br/>
+						<textarea name = "descriptionEvent" rows = "10" cols = "40" id = "descr" placeholder = "Décrivez votre évènement"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						(*Les champs marqués d'un astérisque sont obligatoires)
 					</td>
 				</tr>
 			</table>

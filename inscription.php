@@ -21,31 +21,31 @@
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="prenom">Prénom* :</label><br />
-	                            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" />
+	                            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required  />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="nom">Nom* :</label><br />
-	                            <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+	                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="mdp">Mot de passe* :</label><br />
-	                            <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" />
+	                            <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="cmdp">Confirmation de mot de passe* :</label><br />
-	                            <input type="password" id="cmdp" autocomplete="off" name="cmdp" placeholder="Votre mot de passe" />
+	                            <input type="password" id="cmdp" autocomplete="off" name="cmdp" placeholder="Votre mot de passe" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="email">E-mail* :</label><br />
-	                            <input type="text" id="email" name="email" placeholder="Votre adresse e-mail" />
+	                            <input type="text" id="email" name="email" placeholder="Votre adresse e-mail" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for="cEmail">Confirmation e-mail* :</label><br />
-	                            <input type="text" id="cEmail" autocomplete="off" name="cemail" placeholder="Votre adresse e-mail" />
+	                            <input type="text" id="cEmail" autocomplete="off" name="cemail" placeholder="Votre adresse e-mail" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <label for = "tel">Téléphone* :</label><br />
-	                            <input type="text" name="telephone" id="tel" placeholder="Votre numéro de téléphone" />
+	                            <input type="text" name="telephone" id="tel" placeholder="Votre numéro de téléphone" required />
 	                        </tr></td>
 	                        <tr><td>
 	                            <input type="checkbox" name="admin" id="admin" value="vrai" /><label for="admin">Je suis un administrateur</label><br />
@@ -75,11 +75,11 @@
                             </tr></td>
                             <tr><td>
                                 <label for="connectMail">E-mail* :</label><br />
-	                            <input type="text" id="connectMail" name="email" placeholder="Votre adresse e-mail" />
+	                            <input type="text" id="connectMail" name="email" placeholder="Votre adresse e-mail" required />
                             </tr></td>
                             <tr><td>
                                 <label for="connectMdp">Mot de passe* :</label><br />
-	                            <input type="password" id="connectMdp" name="mdp" placeholder="Votre mot de passe" />
+	                            <input type="password" id="connectMdp" name="mdp" placeholder="Votre mot de passe" required />
                             </tr></td>
                             <tr><td>
                                 <input type="submit" value="Se connecter" />
