@@ -9,9 +9,6 @@
 <body>
 
 <?php
-	$fichierEvent = fopen('evenementsEnre', 'a+');
-	fputs($fichierEvent, "salut");
-	fclose($fichierEvent);
 	$erreurNom="";
 	$erreurLieu="";
 	$erreurDate="";
@@ -24,6 +21,7 @@
 		$jourEvent=ADDSLASHES($_POST['jourEvent']);
 		$moisEvent=ADDSLASHES($_POST['moisEvent']);
 		$anneeEvent=ADDSLASHES($_POST['anneeEvent']);
+		$descriptionEvent=ADDSLASHES($_POST['descriptionEvent']);
 		// création des messages d'erreur
 		if ($nomEvent=="" || $lieuEvent=="" || $jourEvent=="" || $moisEvent=="" || $anneeEvent=="")
 		{
@@ -83,7 +81,7 @@
 		</form>
 
 
-	<?php $nomEvent = ''; require 'formulaireEvent.inc.php'; ?> 
+	<?php/* $nomEvent = ''; require 'formulaireEvent.inc.php'; */?>
 
 	</section>
 
@@ -93,9 +91,20 @@
 		//traitement du formulaire
 		else
 		{
-			$fichierEvent = fopen('evenementsEnre', 'a+');
-			fputs($fichierEvent, 'salut');
+			$fichierEvent = fopen('evenementsEnre', 'a');
+			fputs($fichierEvent, $nomEvent . '|' . $lieuEvent . '|' . $jourEvent . '/' . $moisEvent . '/' . $anneeEvent . '|' . $descriptionEvent . "\r\n");
 			fclose($fichierEvent);
+			?>
+			<header>
+				<?php include("enTete.php"); ?>
+			</header>
+			<section>
+				<h1>Ajout réussi</h1>
+				Votre évènement a bien été ajouté </br>
+				<input type="button" name="finAjoutEvent" value="Retour à la liste d'évènements" onclick="self.location.href='evenements.php'" font-weight:bold"onclick>
+			</section>
+			</body>
+		<?php
 		}
 
 	}
@@ -148,7 +157,7 @@
 		</form>
 
 
-	<?php $nomEvent = ''; require 'formulaireEvent.inc.php'; ?> 
+	<?php/* $nomEvent = ''; require 'formulaireEvent.inc.php'; */?> 
 
 	</section>
 </body>

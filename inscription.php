@@ -10,6 +10,26 @@
 	<header>
 		<?php include("enTete.php"); ?>
 	</header>
+	<?php if(isset($_SESSION["login"]))
+	{
+		if(isset($_POST["deconnection"]))
+		{
+			session_destroy();
+			unset($_SESSION);
+			echo '<section>
+				Vous avez été correctement déconnecté
+			</section>'
+		}
+		else
+		{
+			echo '<section>
+				Bonjour $_SESSION["login"], vous êtes correctement connecté.</br>
+				<form method="post" action="inscription.php">
+					<input type = "submit", value = "Se déconnecter", name = "deconnection">
+				</form>'
+		}
+			
+	}?>
 	<table class="fullPage">
 	    <tr>
 	        <td id="colInscription">
