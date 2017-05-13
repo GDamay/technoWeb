@@ -1,3 +1,10 @@
+<?php session_start();
+if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
+{
+	$_POST["creerEvent"]='true';
+	header('Location: inscription.php?erreur=notAdmin');
+	exit();
+}?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -92,7 +99,7 @@
 		else
 		{
 			$fichierEvent = fopen('evenementsEnre', 'a');
-			fputs($fichierEvent, $nomEvent . '|' . $lieuEvent . '|' . $jourEvent . '/' . $moisEvent . '/' . $anneeEvent . '|' . $descriptionEvent . "\r\n");
+			fputs($fichierEvent, $nomEvent . '|' . $lieuEvent . '|' . $jourEvent . '/' . $moisEvent . '/' . $anneeEvent . '|' . $descriptionEvent . "\n");
 			fclose($fichierEvent);
 			?>
 			<header>

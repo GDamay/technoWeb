@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -37,7 +38,13 @@
 			<br>
             
             <section>
-			    <input type="button" name="creerEvent" value="Ajouter un évènement" onclick="self.location.href='creerEvent.php'" font-weight:bold"onclick>
+				<form method="POST" <?php if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
+					echo('action=\'inscription.php\'"');
+				else
+					echo('action=\'creerEvent.php\'"');
+				?>>
+					<input type="submit" name="creerEvent" value="Ajouter un évènement">
+				</form>
 			</section>
 
   </body>

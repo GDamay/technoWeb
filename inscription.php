@@ -13,7 +13,9 @@
 	</header>
 	<?php
 	$errorMessageConnexion="";
-	if(isset($_SESSION["prenom"]) && isset($_POST["deconnection"]))
+	if(isset($_POST["creerEvent"]) || (isset($_GET["erreur"]) && $_GET["erreur"]=='notAdmin'))
+		$errorMessageConnexion="Veuillez vous connecter avec un compte administrateur pour créer un évènement.";
+	else if(isset($_SESSION["prenom"]) && isset($_POST["deconnection"]))
 	{
 		session_destroy();
 		unset($_SESSION);?>
@@ -80,7 +82,7 @@
 				
 				if(!isset($errorMessageInscription))
 				{
-					fputs($fichier, $_POST["prenom"] . "|" . $_POST["nom"] . "|" . $_POST["mdp"] . "|" . $_POST["email"] . "|" . $_POST["telephone"] . "|" . (isset($_POST["admin"]) ? 'true' : 'false') . "\n");
+					fputs($fichier, $_POST["prenom"] . "|" . $_POST["nom"] . "|" . $_POST["mdp"] . "|" . $_POST["email"] . "|" . $_POST["telephone"] . "|" . (isset($_POST["admin"]) ? 'true' : 'false') . "|\n");
 					$_SESSION['prenom']=$_POST["prenom"];
 					$_SESSION['nom']=$_POST["nom"];
 					$_SESSION['id']=$_POST["email"];
@@ -197,7 +199,8 @@
 	{?>
 		<section>
 			<h1>Connexion réussie</h1>
-			<?php echo("Bonjour " . $_SESSION['prenom'] . ", vous êtes connecté.</br>");?>
+			<?php echo("Bonjour " . $_SESSION['prenom'] . ", vous êtes connecté.</br>");
+			if(isset($errorMessageConnexion)) echo "<div class='messageErreur'>$errorMessageConnexion</div></br>"; ?>
 			<form method="post" action="<?php echo($_SERVER['PHP_SELF']);?>">
 				<input type = "submit", value = "Se déconnecter", name = "deconnection">
 			</form>
