@@ -21,15 +21,15 @@
 
 				$event=fgets($fichier);
 	    	while ($event!=false)
-				{
-						list($titre, $lieu, $date,$description)=explode("|",$event);
-						echo "<section> <h1> $titre </h1>";
-						echo "<strong> Lieu: </strong> $lieu <br>";
-						echo "<strong> Date: </strong> $date <br>";
-						echo "<strong> Description: </strong> $description";
-						echo "</section>";
-						$event=fgets($fichier);
-				}
+			{
+				list($titre, $lieu, $date,$description)=explode("|",$event);
+				echo "<section> <h1> $titre </h1>";
+				echo "<strong> Lieu: </strong> $lieu <br>";
+				echo "<strong> Date: </strong> $date <br>";
+				echo "<strong> Description: </strong> $description";
+				echo "</section>";
+				$event=fgets($fichier);
+			}
 	    fclose ( $fichier );
 	    ?>
 
