@@ -42,7 +42,6 @@
 						$_SESSION['id']=$id;
 						$_SESSION['telephone']=$telephone;
 						$_SESSION['admin']=$admin;
-						echo($prenom . " " . $_SESSION['prenom']);
 					}
 					$inscrit=fgets($fichier);
 				}
@@ -58,7 +57,7 @@
 		?><table class="fullPage">
 			<tr>
 				<td id="colInscription">
-					<section>
+					<section id="test">
 						<table id="tableInscription">
 							<form method="post" action="<?php echo($_SERVER['PHP_SELF']);?>">
 								<tr><td>
@@ -74,11 +73,11 @@
 								</tr></td>
 								<tr><td>
 									<label for="mdp">Mot de passe* :</label><br />
-									<input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required />
+									<input type="password" autocomplete = "off" value="" id="mdp" name="mdp" placeholder="Votre mot de passe" required />
 								</tr></td>
 								<tr><td>
 									<label for="cmdp">Confirmation de mot de passe* :</label><br />
-									<input type="password" id="cmdp" autocomplete="off" name="cmdp" placeholder="Votre mot de passe" required />
+									<input type="password" id="cmdp" value=""  autocomplete="off" name="cmdp" placeholder="Votre mot de passe" required />
 								</tr></td>
 								<tr><td>
 									<label for="email">E-mail* :</label><br />
@@ -86,7 +85,7 @@
 								</tr></td>
 								<tr><td>
 									<label for="cEmail">Confirmation e-mail* :</label><br />
-									<input type="text" id="cEmail" autocomplete="off" name="cemail" placeholder="Votre adresse e-mail" required />
+									<input type="text" id="cEmail" value="" autocomplete="off" name="cemail" placeholder="Votre adresse e-mail" required />
 								</tr></td>
 								<tr><td>
 									<label for = "tel">Téléphone* :</label><br />
@@ -97,7 +96,7 @@
 								</tr></td>
 								<tr><td>
 									<label for="mdpA">Mot de passe Administrateur :</label><br />
-									<input type="password" name="mdpAdmin" id="mdpA" placeholder="Mot de passe pour être administrateur" />
+									<input autocomplete="off" value="" type="password" name="mdpAdmin" id="mdpA" placeholder="Mot de passe pour être administrateur" />
 								</tr></td>
 								<tr><td>
 									<input type="submit" value="S'inscrire" />
@@ -108,7 +107,8 @@
 							</form>
 						</table>
 					</section>
-				</td><td id="colConnexion">
+				</td>
+				<td id="colConnexion">
 					<section>
 						<table id="tableConnexion">
 							<form method="post" action="<?php echo($_SERVER['PHP_SELF']);?>">
@@ -128,7 +128,7 @@
 								</tr></td>
 								<tr><td>
 									<label for="connectMdp">Mot de passe* :</label><br />
-									<input type="password" id="connectMdp" name="mdpC" placeholder="Votre mot de passe" required />
+									<input autocomplete="off" value="" type="password" id="connectMdp" name="mdpC" placeholder="Votre mot de passe" required />
 								</tr></td>
 								<tr><td>
 									<input type="submit" value="Se connecter" name = "connexion" />
@@ -148,7 +148,7 @@
 	{?>
 		<section>
 			<h1>Connexion réussie</h1>
-			<?php echo("Bonjour " . $_SESSION['prenom'] . ", vous êtes correctement connecté.</br>");?>
+			<?php echo("Bonjour " . $_SESSION['prenom'] . ", vous êtes connecté.</br>");?>
 			<form method="post" action="<?php echo($_SERVER['PHP_SELF']);?>">
 				<input type = "submit", value = "Se déconnecter", name = "deconnection">
 			</form>
