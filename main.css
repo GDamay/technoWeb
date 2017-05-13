@@ -51,6 +51,11 @@ header
     width: 40%;
 }
 
+.messageErreur
+{
+	color: red;
+}
+
 #colInscription, #colConnexion
 {
     width: 50%;

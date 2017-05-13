@@ -29,7 +29,7 @@
 						echo "<strong> Description: </strong> $description";
 						echo "</section>";
 						$event=fgets($fichier);
-	      }
+				}
 	    fclose ( $fichier );
 	    ?>
 
