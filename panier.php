@@ -5,28 +5,33 @@
 	<title>Panier</title>
 	<meta charset="UTF-8"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-<!--<style>
+<style>
 table {
     border-collapse: collapse;
     width: 100%;
 }
 
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
 
-tr:hover{background-color:#f5f5f5}
-</style>-->
-<style>
+
 fieldset
 {
 	border:2px solid green;
     -moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;	
+	margin-top : 10 px;
+	text-align: left;
+	height: 100%;
 }
+
+legend
+{
+	background-color : green ;
+	color : white ;
+	border-radius:8px;
+	padding : 8px;
+	line-height : 1em;
+	
 </style>
 </head>
 <body>
@@ -50,49 +55,78 @@ fieldset
 	    fclose ( $fichier );
 	    ?>
 	
-	<section>
-		<table class="fullPage">
+		<table style="width:75%">
+			<thead>
 			<tr>
-				<td><colConnexion><fieldset>
+				<th style="width:33%"></th>
+				<th></th>
+				<th></th>
+			</tr>
+			</thead>
+			<tr>
+				<td ><fieldset>
 					<legend>Evénéments</legend>
-					<label><?php echo"<strong>$titre</strong>"?></label><br/>
-					<label><?php echo $date ?> </label><br/>
-					<label><?php echo $lieu ?></label><br/>
-				</fieldset></colConnexion></td>
-				<td colspan="2" rowspan="2"><fieldset id="fieldsetPanier">
+					<?php
+							$fichier = fopen ("evenementsEnre", "r");
+							$event=fgets($fichier);
+							while ($event!=false)
+							{
+								list($titre, $lieu, $date,$description)=explode("|",$event);
+								echo"   <label><strong>$titre</strong></label><br/>
+										<label><strong>Date: </strong>$date</label><br/>
+										<label><strong>Lieu: </strong>$lieu</label><br/>
+										<br/>";
+								$event=fgets($fichier);
+							}
+							fclose ( $fichier );
+							?>
+				</fieldset></td>
+				<td colspan="2" rowspan="2"><fieldset style="width:100%">
 					<legend>Painer</legend>
 					<table>
 						<thead>
-						<tr>
-							<th id="pr">Tarif</pr></th>
-							<th id="pr">Prix</pr></th>
-							<th><pr id="pr">Quantité</pr></th>
+						<tr style="tr:hover{background-color:#f5f5f5}">
+							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Tarif</th>
+							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Prix</th>
+							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Quantité</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<td id="pr"><?php echo $titre ?></td>
-							<td id="pr">20 €</td>
-							<td id="pr"><select>
-								<option value= "1">1</option>
-								<option value= "2">2</option>
-								<option value= "3">3</option>
-								<option value= "4">4</option>
-								<option value= "5">5</option>
+						<?php
+							$fichier = fopen ("evenementsEnre", "r");
+							$event=fgets($fichier);
+							while ($event!=false)
+							{
+								list($titre, $lieu, $date,$description)=explode("|",$event);
+		
+								echo "<tr style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;hover{background-color:#f5f5f5}'>";
+								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
+								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>20 €</td>";
+								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select>;
+									<option value= '1'>1</option>
+									<option value= '2'>2</option>
+									<option value= '3'>3</option>
+									<option value= '4'>4</option>
+									<option value= '5'>5</option>
 							</td>
 						</tr>
-						<tr>
-							<td><input type="submit" /></td>
+						<tr>";
+								$event=fgets($fichier);
+							}
+							fclose ( $fichier );
+							?>
+						
+							<td style="text-align: right"><input type="submit" /></td>
 						</tr>
 						</tbody>
 					</table>
 				</fieldset></td>
 			</tr>
-			<tr>
+			<tr style="width:50%">
 				<td><fieldset>
 					<legend>Contact Organisateur</legend>
 					<label>INSA de Rouen, </label><br/>
-					<label>non loin d''un ordinateur et </label><br/>
+					<label>non loin d'un ordinateur et </label><br/>
 					<label>de cafféine ou de boisson sucrée.</label><br/>
 				</fieldset></td>
 			</tr>
