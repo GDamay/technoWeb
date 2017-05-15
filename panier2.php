@@ -90,10 +90,10 @@ legend
 								echo "<tr style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;hover{background-color:#f5f5f5}'>";
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
 								?>
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select$i"] ?></td>
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select$i"]*20 ?></td>
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select"string($i)] ?></td>
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select"string($i)]*20 ?></td>
 								<?php
-								$total=$total+$_POST["select$i"]*20;
+								$total=$total+$_POST["select"string($i)]*20;
 								$i=$i+1;
 								$event=fgets($fichier);
 							}

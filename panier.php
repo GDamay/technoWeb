@@ -92,7 +92,7 @@ legend
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>20 €</td>";
 								?>
 								<form method="POST" action="panier2.php">
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="select$i">
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="select"string($i)>
 									<option value= "0">0</option>
 									<option value= "1">1</option>
 									<option value= "2">2</option>
