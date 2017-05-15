@@ -1,4 +1,4 @@
-﻿<?php session_start();?>
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 
 <HTML>
@@ -30,18 +30,25 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	?>
 
 <TABLE BORDER="0"> 
+	<thead>
+		<TR>
+			<th style="width:33%"></th>
+			<th style="width:33%"></th>
+			<th style="width:33%"></th>
+		</TR>
+	</thead>
 	<TR> 
- 		<TD id = 'boiteEvent'> 
+ 		<TD id = 'boiteEvent';> 
 				<?php
 
-					echo " <section><h1 id='titreEvent'> $titre1 </h1>";
+					echo "<section><h1 id='titreEvent'> $titre1 </h1>";
 					echo "<strong> Lieu: </strong> $lieu1 <br/><br/>";
 					echo "<strong> Date: </strong> $date1 <br/><br/>";
 					echo "<strong> Description: </strong> $description1";
 					echo "</section>";
 				?>
 		</TD> 
- 		<TD id = 'boiteEvent'> 
+ 		<TD id = 'boiteEvent';> 
 				<?php
 					echo "<section> <h1 id='titreEvent'> $titre2 </h1>";
 					echo "<strong> Lieu: </strong> $lieu2 <br/><br/>";
@@ -50,7 +57,7 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 					echo "</section>";
 				?>
 		</TD> 
-	 	<TD id = 'boiteEvent'>
+	 	<TD id = 'boiteEvent';>
 				<?php
 					echo "<section> <h1 id='titreEvent'> $titre3 </h1>";
 					echo "<strong> Lieu: </strong> $lieu3 <br/><br/>";
