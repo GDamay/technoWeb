@@ -38,15 +38,15 @@
 							fclose ( $fichier );
 							?>
 				</fieldset></td>
-				<td colspan="2" rowspan="2"><fieldset id='boitePanier' style="width:100%;margin-top:0;">
+				<td colspan="2" rowspan="2" style="vertical-align: top;"><fieldset id='boitePanier' style="width:100%;margin-top:0;">
 					<legend id='titrePanier'>Panier</legend>
 					
 					<table style="border-collapse: collapse;width:100%;">
 						<thead>
 						<tr style="tr:hover{background-color:#f5f5f5}">
-							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Tarif</th>
-							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Prix</th>
-							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Quantité</th>
+							<th id='tdPanier'>Tarif</th>
+							<th id='tdPanier'>Prix</th>
+							<th id='tdPanier'>Quantité</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -59,12 +59,12 @@
 							{
 								list($titre, $lieu, $date,$description)=explode("|",$event);
 								
-								echo "<tr style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;hover{background-color:#f5f5f5}'>";
-								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
-								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>20 €</td>";
+								echo "<tr id='tdPanier'; style=’hover{background-color:#f5f5f5}'>";
+								echo "<td id='tdPanier'>$titre</td>";
+								echo "<td id='tdPanier'>20 €</td>";
 								?>
 
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="selectTab[]">
+								<td id='tdPanier'><select name="selectTab[]">
 									<option value= "0">0</option>
 									<option value= "1">1</option>
 									<option value= "2">2</option>
@@ -79,8 +79,11 @@
 							}
 							fclose ( $fichier );
 							?>
-								
+							<tr>
+							<td><br/></td>
+							<td><br/></td>	
 							<td style="text-align: left"><input type="submit" /></td>
+							
 						</form>
 						</tr>
 						</tbody>
