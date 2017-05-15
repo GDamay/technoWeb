@@ -1,4 +1,4 @@
-<?php session_start();?>
+﻿<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -81,7 +81,7 @@ legend
 						<?php
 							$fichier = fopen ("evenementsEnre", "r");
 							$event=fgets($fichier);
-							$i=1;
+							$i=0;
 							$total=0;
 							while ($event!=false)
 							{
@@ -90,10 +90,11 @@ legend
 								echo "<tr style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;hover{background-color:#f5f5f5}'>";
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
 								?>
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select"string($i)] ?></td>
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST["select"string($i)]*20 ?></td>
+
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST['selectTab'][$i] ?></td>
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST['selectTab'][$i]*20 ?></td>
 								<?php
-								$total=$total+$_POST["select"string($i)]*20;
+								$total=$total+$_POST['selectTab'][$i]*20;
 								$i=$i+1;
 								$event=fgets($fichier);
 							}
