@@ -1,4 +1,4 @@
-﻿<?php session_start();?>
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -6,10 +6,12 @@
 	<title>Panier</title>
 	<meta charset="UTF-8"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<style>
 table {
     border-collapse: collapse;
     width: 100%;
 }
+</style>
 </head>
 <body>
 	<header>
@@ -68,7 +70,7 @@ table {
 								?>
 
 								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST['selectTab'][$i] ?></td>
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST['selectTab'][$i]*20 ?></td>
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><?php echo $_POST['selectTab'][$i]*20 ?>€</td>
 								<?php
 								$total=$total+$_POST['selectTab'][$i]*20;
 								$i=$i+1;
@@ -80,7 +82,7 @@ table {
 							<tr>
 								<td><strong>TOTALE:</strong></td>
 								<td></td>
-								<td><strong><?php echo $total ?></strong></td>
+								<td><strong><?php echo $total ?>€</strong></td>
 								
 							</tr>
 							<tr>
