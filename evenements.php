@@ -3,7 +3,7 @@
 <HTML>
 <head>
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>Évènements</title>
+	<title>Ã‰vÃ¨nements</title>
 	<meta charset="UTF-8"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
@@ -28,9 +28,9 @@ list($titre2, $lieu2, $date2,$description2)=explode("|",$event);
 list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	?>
 
-<TABLE BORDER="1"> 
-  <TR> 
- <TD> 
+<TABLE BORDER="1">
+  <TR>
+ <TD>
 <?php
 
 	echo "<section> <h1> $titre1 </h1>";
@@ -40,8 +40,8 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	echo "</section>";
 ?>
 
-</TD> 
- <TD> 
+</TD>
+ <TD>
 <?php
 	echo "<section> <h1> $titre2 </h1>";
 	echo "<strong> Lieu: </strong> $lieu2 <br>";
@@ -49,7 +49,7 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	echo "<strong> Description: </strong> $description2";
 	echo "</section>";
 ?>
-</TD> 
+</TD>
  <TD>
 <?php
 	echo "<section> <h1> $titre3 </h1>";
@@ -58,9 +58,9 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	echo "<strong> Description: </strong> $description3";
 	echo "</section>";
 ?>
-</TD> 
-  </TR> 
-</TABLE> 
+</TD>
+  </TR>
+</TABLE>
 
 
 
@@ -81,14 +81,14 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 
 			<br>
 			<br>
-            
+
             <section>
 				<form method="POST" <?php if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
 					echo('action=\'inscription.php\'"');
 				else
 					echo('action=\'creerEvent.php\'"');
 				?>>
-					<input type="submit" name="creerEvent" value="Ajouter un évènement">
+					<input type="submit" name="creerEvent" value="Ajouter un Ã©vÃ¨nement">
 				</form>
 			</section>
 
