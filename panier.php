@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -38,24 +39,7 @@ legend
 	<header>
 		<?php include("enTete.php"); ?>
 	</header>
-	<?php
-	    	$fichier = fopen ("evenementsEnre", "r");
-	    	//fputs ( $fichier , "Une phrase\n");
-	    	/* sous Windows \r\n, sous Linux ou mac \n*/
-	/*   	echo "<p> Dans le fichier fichier . txt :</p>"; */
-
-				$event=fgets($fichier);
-	    	while ($event!=false)
-				{
-						list($titre, $lieu, $date,$description)=explode("|",$event);
-		
-
-						$event=fgets($fichier);
-	      }
-	    fclose ( $fichier );
-	    ?>
-	
-		<table style="width:75%">
+		<table style="width:75%;margin:0 auto">
 			<thead>
 			<tr>
 				<th style="width:33%"></th>
@@ -81,8 +65,9 @@ legend
 							fclose ( $fichier );
 							?>
 				</fieldset></td>
-				<td colspan="2" rowspan="2"><fieldset style="width:100%">
+				<td colspan="2" rowspan="2"><fieldset style="width:100%;margin-top:0;">
 					<legend>Painer</legend>
+					
 					<table>
 						<thead>
 						<tr style="tr:hover{background-color:#f5f5f5}">
@@ -92,31 +77,54 @@ legend
 						</tr>
 						</thead>
 						<tbody>
+						
 						<?php
 							$fichier = fopen ("evenementsEnre", "r");
 							$event=fgets($fichier);
+							$i=1;
+							
 							while ($event!=false)
 							{
 								list($titre, $lieu, $date,$description)=explode("|",$event);
-		
+								
 								echo "<tr style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;hover{background-color:#f5f5f5}'>";
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>20 €</td>";
-								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select>;
-									<option value= '1'>1</option>
-									<option value= '2'>2</option>
-									<option value= '3'>3</option>
-									<option value= '4'>4</option>
-									<option value= '5'>5</option>
-							</td>
-						</tr>
-						<tr>";
+								?>
+								<form method="POST" action="panier2.php">
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="select$i">
+									<option value= "0">0</option>
+									<option value= "1">1</option>
+									<option value= "2">2</option>
+									<option value= "3">3</option>
+									<option value= "4">4</option>
+									<option value= "5">5</option>
+									</select>
+								</td>
+								</tr>
+								</form>
+							<?php
+							$i=$i+1;
 								$event=fgets($fichier);
 							}
 							fclose ( $fichier );
 							?>
-						
-							<td style="text-align: right"><input type="submit" /></td>
+							
+							<form method="POST" action="panier2.php">
+							<tr>
+							<td><select name="select">
+							<option value= "1">1</option>
+							<option value= "2">2</option>
+							<option value= "3">3</option>
+							<option value= "4">4</option>
+							<option value= "5">5</option>
+							</select></td>
+							<td><br/></td>
+							</tr>
+							<form method="POST" action="panier2.php">
+								
+							<td style="text-align: left"><input type="submit" /></td>
+							</form>
 						</tr>
 						</tbody>
 					</table>
@@ -124,7 +132,7 @@ legend
 			</tr>
 			<tr style="width:50%">
 				<td><fieldset>
-					<legend>Contact Organisateur</legend>
+					<legend>Contacter Organisateur</legend>
 					<label>INSA de Rouen, </label><br/>
 					<label>non loin d'un ordinateur et </label><br/>
 					<label>de cafféine ou de boisson sucrée.</label><br/>
