@@ -1,4 +1,4 @@
-﻿<?php session_start();?>
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 
 <HTML>
@@ -12,8 +12,7 @@
 		<header>
 			<?php include("enTete.php"); ?>
 		</header>
-		<br/>
-		<br/>
+
 
 
 	    <?php
@@ -30,11 +29,16 @@ list($titre2, $lieu2, $date2,$description2)=explode("|",$event);
 list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	?>
 
-<table border="0"> 
-
+<TABLE BORDER="0"> 
+	<thead>
+		<TR>
+			<th style="width:33%"></th>
+			<th style="width:33%"></th>
+			<th style="width:33%"></th>
+		</TR>
+	</thead>
 	<TR> 
-		<TD width=5/>
- 		<TD id = 'boiteEvent'; style="vertical-align: top;"> 
+ 		<TD id = 'boiteEvent';> 
 				<?php
 
 					echo "<section><h1 id='titreEvent'> $titre1 </h1>";
@@ -43,9 +47,8 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 					echo "<strong> Description: </strong> $description1";
 					echo "</section>";
 				?>
-		</TD>
-		<TD width=5/>
- 		<TD id = 'boiteEvent'; style="vertical-align: top;"> 
+		</TD> 
+ 		<TD id = 'boiteEvent';> 
 				<?php
 					echo "<section> <h1 id='titreEvent'> $titre2 </h1>";
 					echo "<strong> Lieu: </strong> $lieu2 <br/><br/>";
@@ -54,8 +57,7 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 					echo "</section>";
 				?>
 		</TD> 
-		<TD width=5/>
-	 	<TD id = 'boiteEvent';style="vertical-align: top;">
+	 	<TD id = 'boiteEvent';>
 				<?php
 					echo "<section> <h1 id='titreEvent'> $titre3 </h1>";
 					echo "<strong> Lieu: </strong> $lieu3 <br/><br/>";
@@ -64,11 +66,8 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 					echo "</section>";
 				?>
 		</TD> 
-		<TD width=5/>
   </TR> 
-</TABLE>
-<br/>
-<br/>
+</TABLE> 
 
 
 
@@ -82,13 +81,14 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 				echo "<strong> Lieu: </strong> $lieu <br/><br/>";
 				echo "<strong> Date: </strong> $date <br/><br/>";
 				echo "<strong> Description: </strong> $description";
-				echo "</section><br/><br/>";
+				echo "</section id = boite>";
 				$event=fgets($fichier);
 			}
 	    fclose ( $fichier );
 	    ?>
 
-			
+			<br>
+			<br>
 
             <section>
 				<form method="POST" <?php if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
