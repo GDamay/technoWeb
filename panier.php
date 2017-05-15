@@ -1,4 +1,4 @@
-<?php session_start();?>
+﻿<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -77,11 +77,10 @@ legend
 						</tr>
 						</thead>
 						<tbody>
-						
+						<form method="POST" action="panier2.php">
 						<?php
 							$fichier = fopen ("evenementsEnre", "r");
 							$event=fgets($fichier);
-							$i=1;
 							
 							while ($event!=false)
 							{
@@ -91,8 +90,8 @@ legend
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>$titre</td>";
 								echo "<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'>20 €</td>";
 								?>
-								<form method="POST" action="panier2.php">
-								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="select"string($i)>
+
+								<td style='padding: 8px;text-align: left;border-bottom: 1px solid #ddd;'><select name="selectTab[]">
 									<option value= "0">0</option>
 									<option value= "1">1</option>
 									<option value= "2">2</option>
@@ -102,29 +101,14 @@ legend
 									</select>
 								</td>
 								</tr>
-								</form>
 							<?php
-							$i=$i+1;
 								$event=fgets($fichier);
 							}
 							fclose ( $fichier );
 							?>
-							
-							<form method="POST" action="panier2.php">
-							<tr>
-							<td><select name="select">
-							<option value= "1">1</option>
-							<option value= "2">2</option>
-							<option value= "3">3</option>
-							<option value= "4">4</option>
-							<option value= "5">5</option>
-							</select></td>
-							<td><br/></td>
-							</tr>
-							<form method="POST" action="panier2.php">
 								
 							<td style="text-align: left"><input type="submit" /></td>
-							</form>
+						</form>
 						</tr>
 						</tbody>
 					</table>
