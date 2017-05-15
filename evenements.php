@@ -1,10 +1,10 @@
-<?php session_start();?>
+ï»¿<?php session_start();?>
 <!--DOCTYPE HTML-->
 
 <HTML>
 <head>
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<title>Évènements</title>
+	<title>Ã‰vÃ¨nements</title>
 	<meta charset="UTF-8"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
@@ -64,6 +64,7 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 
 
 
+
 <?php
 	$event=fgets($fichier);
 	    	while ($event!=false)
@@ -81,14 +82,14 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 
 			<br>
 			<br>
-            
+
             <section>
 				<form method="POST" <?php if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
 					echo('action=\'inscription.php\'"');
 				else
 					echo('action=\'creerEvent.php\'"');
 				?>>
-					<input type="submit" name="creerEvent" value="Ajouter un évènement">
+					<input type="submit" name="creerEvent" value="Ajouter un Ã©vÃ¨nement">
 				</form>
 			</section>
 

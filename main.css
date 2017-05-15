@@ -113,6 +113,28 @@ header
 	line-height : 1em;
 }
 
+#boitePanier
+{
+	border:2px solid green;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+	margin-top : 10 px;
+	text-align: left;
+	height: 100%;
+}
+
+#titrePanier
+{
+	background-color : green ;
+	color : white ;
+	border-radius:8px;
+	padding : 8px;
+	line-height : 1em;
+}
+
+
+
 .fullPage
 {
     width: 100%;

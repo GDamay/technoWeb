@@ -6,34 +6,10 @@
 	<title>Panier</title>
 	<meta charset="UTF-8"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-<style>
 table {
     border-collapse: collapse;
     width: 100%;
 }
-
-
-
-fieldset
-{
-	border:2px solid green;
-    -moz-border-radius:8px;
-    -webkit-border-radius:8px;	
-    border-radius:8px;	
-	margin-top : 10 px;
-	text-align: left;
-	height: 100%;
-}
-
-legend
-{
-	background-color : green ;
-	color : white ;
-	border-radius:8px;
-	padding : 8px;
-	line-height : 1em;
-	
-</style>
 </head>
 <body>
 	<header>
@@ -48,8 +24,8 @@ legend
 			</tr>
 			</thead>
 			<tr>
-				<td ><fieldset>
-					<legend>Evénéments</legend>
+				<td ><fieldset id='boitePanier'>
+					<legend id='titrePanier'>Evénéments</legend>
 					<?php
 							$fichier = fopen ("evenementsEnre", "r");
 							$event=fgets($fichier);
@@ -65,8 +41,8 @@ legend
 							fclose ( $fichier );
 							?>
 				</fieldset></td>
-				<td colspan="2" rowspan="2"><fieldset style="width:100%;margin-top:0;">
-					<legend>Painer</legend>
+				<td colspan="2" rowspan="2"><fieldset id='boitePanier' style="width:100%;margin-top:0;">
+					<legend id='titrePanier'>Panier</legend>
 					
 					<table>
 						<thead>
@@ -117,8 +93,8 @@ legend
 				</fieldset></td>
 			</tr>
 			<tr style="width:50%">
-				<td><fieldset>
-					<legend>Contacter Organisateur</legend>
+				<td><fieldset id='boitePanier'>
+					<legend id='titrePanier'>Contacter Organisateur</legend>
 					<label>INSA de Rouen, </label><br/>
 					<label>non loin d'un ordinateur et </label><br/>
 					<label>de cafféine ou de boisson sucrée.</label><br/>
