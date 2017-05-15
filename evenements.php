@@ -1,5 +1,6 @@
 <?php session_start();?>
 <!--DOCTYPE HTML-->
+
 <HTML>
 <head>
 	<link rel="stylesheet" type="text/css" href="main.css">
@@ -28,37 +29,36 @@ list($titre2, $lieu2, $date2,$description2)=explode("|",$event);
 list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	?>
 
-<TABLE BORDER="1"> 
-  <TR> 
- <TD> 
-<?php
+<TABLE BORDER="0"> 
+	<TR> 
+ 		<TD id = 'boiteEvent'> 
+				<?php
 
-	echo "<section> <h1> $titre1 </h1>";
-	echo "<strong> Lieu: </strong> $lieu1 <br>";
-	echo "<strong> Date: </strong> $date1 <br>";
-	echo "<strong> Description: </strong> $description1";
-	echo "</section>";
-?>
-
-</TD> 
- <TD> 
-<?php
-	echo "<section> <h1> $titre2 </h1>";
-	echo "<strong> Lieu: </strong> $lieu2 <br>";
-	echo "<strong> Date: </strong> $date2 <br>";
-	echo "<strong> Description: </strong> $description2";
-	echo "</section>";
-?>
-</TD> 
- <TD>
-<?php
-	echo "<section> <h1> $titre3 </h1>";
-	echo "<strong> Lieu: </strong> $lieu3 <br>";
-	echo "<strong> Date: </strong> $date3 <br>";
-	echo "<strong> Description: </strong> $description3";
-	echo "</section>";
-?>
-</TD> 
+					echo " <section><h1 id='titreEvent'> $titre1 </h1>";
+					echo "<strong> Lieu: </strong> $lieu1 <br/><br/>";
+					echo "<strong> Date: </strong> $date1 <br/><br/>";
+					echo "<strong> Description: </strong> $description1";
+					echo "</section>";
+				?>
+		</TD> 
+ 		<TD id = 'boiteEvent'> 
+				<?php
+					echo "<section> <h1 id='titreEvent'> $titre2 </h1>";
+					echo "<strong> Lieu: </strong> $lieu2 <br/><br/>";
+					echo "<strong> Date: </strong> $date2 <br/><br/>";
+					echo "<strong> Description: </strong> $description2";
+					echo "</section>";
+				?>
+		</TD> 
+	 	<TD id = 'boiteEvent'>
+				<?php
+					echo "<section> <h1 id='titreEvent'> $titre3 </h1>";
+					echo "<strong> Lieu: </strong> $lieu3 <br/><br/>";
+					echo "<strong> Date: </strong> $date3 <br/><br/>";
+					echo "<strong> Description: </strong> $description3";
+					echo "</section>";
+				?>
+		</TD> 
   </TR> 
 </TABLE> 
 
@@ -69,11 +69,11 @@ list($titre3, $lieu3, $date3,$description3)=explode("|",$event);
 	    	while ($event!=false)
 			{
 				list($titre, $lieu, $date,$description)=explode("|",$event);
-				echo "<section> <h1> $titre </h1>";
-				echo "<strong> Lieu: </strong> $lieu <br>";
-				echo "<strong> Date: </strong> $date <br>";
+				echo "<section id = boiteEvent> <h1 id='titreEvent'> $titre </h1>";
+				echo "<strong> Lieu: </strong> $lieu <br/><br/>";
+				echo "<strong> Date: </strong> $date <br/><br/>";
 				echo "<strong> Description: </strong> $description";
-				echo "</section>";
+				echo "</section id = boite>";
 				$event=fgets($fichier);
 			}
 	    fclose ( $fichier );

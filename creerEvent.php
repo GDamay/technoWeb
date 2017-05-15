@@ -1,4 +1,4 @@
-<?php session_start();
+﻿<?php session_start();
 if(!isset($_SESSION["admin"]) || !$_SESSION["admin"])
 {
 	$_POST["creerEvent"]='true';
