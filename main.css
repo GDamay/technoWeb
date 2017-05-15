@@ -25,9 +25,8 @@ header
     position: relative;
     top: 90%;
 	height: 20%;
-    margin-left: 4.6875%;
-    margin-right: 4.6875%;
-    width: 93.75%;
+    padding-left: 6.5%;
+    width: 100%;
 }
 
 .liensP
