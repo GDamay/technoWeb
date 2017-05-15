@@ -66,7 +66,7 @@ legend
 							?>
 				</fieldset></td>
 				<td colspan="2" rowspan="2"><fieldset style="width:100%;margin-top:0;">
-					<legend>Painer</legend>
+					<legend>Panier</legend>
 					
 					<table>
 						<thead>
