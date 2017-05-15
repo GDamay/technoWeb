@@ -1,4 +1,4 @@
-﻿<?php session_start();?>
+<?php session_start();?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
@@ -41,7 +41,7 @@
 				<td colspan="2" rowspan="2"><fieldset id='boitePanier' style="width:100%;margin-top:0;">
 					<legend id='titrePanier'>Panier</legend>
 					
-					<table>
+					<table style="border-collapse: collapse;width:100%;">
 						<thead>
 						<tr style="tr:hover{background-color:#f5f5f5}">
 							<th style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;">Tarif</th>
