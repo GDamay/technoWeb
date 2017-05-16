@@ -1,4 +1,10 @@
-<?php session_start();?>
+﻿<?php session_start();
+if(!isset($_SESSION["prenom"]))
+{
+	$_POST["creerEvent"]='true';
+	header('Location: inscription.php?erreur=notConnecte');
+	exit();
+}?>
 <!--DOCTYPE HTML-->
 <HTML>
 <head>
